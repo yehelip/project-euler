@@ -2,7 +2,6 @@
 #include <string>
 #include <unordered_map>
 
-// Function to convert a number to its word representation
 std::string numberToWords(int number) {
   static const std::unordered_map<int, std::string> words = {
       {0, "Zero"},     {1, "One"},        {2, "Two"},       {3, "Three"},
@@ -30,7 +29,6 @@ int main() {
   int totalLetters = 0;
   for (int i = 1; i <= 1000; ++i) {
     std::string word = numberToWords(i);
-    // Remove spaces and hyphens, and count letters
     for (char c : word) {
       if (c != ' ' && c != '-') {
         ++totalLetters;

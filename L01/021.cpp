@@ -1,4 +1,3 @@
-// #include <bitset>
 #include <cmath>
 #include <iostream>
 
@@ -17,15 +16,6 @@ int sumDivisors(int n) {
   sum -= n;
   return sum;
 }
-
-/*void amicable_chain(int n, std::bitset<10001> &amicable,
-                    std::bitset<10001> &numbers) {
-  if (numbers[sumDivisors(n)] == true && n != sumDivisors(n)) {
-    amicable[n].flip();
-    amicable[sumDivisors(n)].flip();
-  }
-  numbers[n].flip();
-}*/
 
 int main() {
   int result = 0;

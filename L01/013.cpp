@@ -7,8 +7,7 @@
 std::string sumFirstTenDigits(const std::string &filename) {
   std::ifstream file(filename);
   std::string line;
-  std::vector<int> sum(52, 0); // Initialize a vector to hold the sum,
-                               // considering maximum length of 52 digits
+  std::vector<int> sum(52, 0);
   int carry = 0;
 
   // Adding without considering carry (sum is reversed)
