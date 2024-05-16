@@ -1,13 +1,14 @@
 #include <iostream>
+#define LIMIT 1'000
+using namespace std;
 
 int main() {
-    int sum = 0;
-    for (int i = 1; i < 1000; ++i) {
-        if (i % 3 == 0 || i % 5 == 0) {
-            sum += i;
-        }
+  int sum = 0;
+  for (int num = 1; num < LIMIT; num++) {
+    if (num % 5 == 0 || num % 3 == 0) {
+      sum += num;
     }
-    std::cout << "Sum of multiples of 3 and 5 below 1000: " << sum << std::endl;
-    return 0;
+  }
+  cout << "Sum of all the numbers divisible by 3 or 5 below " << LIMIT
+       << " is: " << sum << endl;
 }
-
