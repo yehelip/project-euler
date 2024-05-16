@@ -8,7 +8,7 @@
 #include <string>
 #include <vector>
 
-#define INDEX 1'000'000
+#define INDEX 1'000'000'000
 #define length 10
 
 class OutOfRangeException : std::exception {
@@ -36,40 +36,35 @@ int factorial(int n) {
 }
 
 void calc(int n, int index, std::vector<int> &vec) {
-  int blockSize = factorial(n - 1);
-  int max = n * blockSize;
-  if (index > factorial(n)) {
-    throw OutOfRangeException(index, max);
-  }
   if (n == 0) {
     return;
   }
-  int temp = 0;
-  while ((temp + 1) * blockSize < index) {
-    temp++;
+  int blockSize = factorial(n - 1);
+  int max = n * blockSize;
+  if (index >= max) {
+    throw OutOfRangeException(index, max - 1);
   }
+
+  int temp = index / blockSize;
   vec.push_back(temp);
-  calc(n - 1, index - (blockSize * temp), vec);
-  return;
+  calc(n - 1, index % blockSize, vec);
 }
 
-std::vector<int> modify(std::vector<int> &vec) {
+std::vector<int> modify(const std::vector<int> &vec) {
   std::vector<int> res;
   std::bitset<length> been;
-  int counter = 0;
-  for (int i = 0; i < length; i++) {
-    for (int j = 0; j < length; j++) {
-      if (been[j] == false) {
+  for (int i = 0; i < length; ++i) {
+    int counter = 0;
+    for (int j = 0; j < length; ++j) {
+      if (!been[j]) {
         if (counter == vec[i]) {
-          been[j].flip();
+          been[j] = true;
           res.push_back(j);
+          break;
         }
-        counter++;
-      } else {
-        continue;
+        ++counter;
       }
     }
-    counter = 0;
   }
   return res;
 }
@@ -83,7 +78,7 @@ int main() {
     return -1;
   }
   std::vector<int> res = modify(vec);
-  std::cout << "The permutation at index " << INDEX << " is:" << "\n";
+  std::cout << "The permutation at index " << INDEX << " is:\n";
   for (const int &num : res) {
     std::cout << num;
   }
