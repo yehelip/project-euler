@@ -1,14 +1,11 @@
-# project-euler
-
-This is level 01 of project-euler!
-
-I made the VecInt class so that it would be easier to work with large numbers!
-
-
-### Project Euler Progress Update
+### Project Euler L01 Progress Update
 
 #### Overview
-I've made significant progress on Project Euler, completing levels 1 through 25. However, level 18 remains an ongoing challenge that I plan to revisit. Below is a brief summary of my progress and a checklist of completed levels.
+I've made significant progress on Project Euler, completing levels 1 through 25 except 18. Below is a brief summary of my progress and a checklist of completed levels.
+
+#### Custom Classes
+**VecInt** 
+I made the VecInt class so that it would be easier to work with large numbers!
 
 #### Progress Summary
 - **Levels Completed:** 1-17, 19-25
@@ -32,7 +29,7 @@ I've made significant progress on Project Euler, completing levels 1 through 25.
 - [x] Level 15
 - [x] Level 16
 - [x] Level 17
-- [ ] Level 18
+- [ ] Level 18 - Trying to solve the harder version
 - [x] Level 19
 - [x] Level 20
 - [x] Level 21
@@ -41,6 +38,5 @@ I've made significant progress on Project Euler, completing levels 1 through 25.
 - [x] Level 24
 - [x] Level 25
 
-My focus moving forward will be to tackle the remaining challenges, particularly level 18, and continue exploring the fascinating world of Project Euler problems.
 
 
