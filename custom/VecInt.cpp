@@ -30,9 +30,29 @@ int VecInt::getAbsInt() const {
 }
 
 bool VecInt::isZero() const { return (getInt() == 0); }
+/*
+VecInt VecInt::pow(const int exponent) const {
+  VecInt res = VecInt(*this);
+  for (int i = 0; i < exponent; i++) {
+    res = res * (*this);
+  }
+  return res;
+}
+*/
+VecInt VecInt::pow(int exponent) const {
+  VecInt res(1);
+  VecInt base(*this);
+  while (exponent > 0) {
+    if (exponent % 2 == 1) {
+      res = res * base;
+    }
+    base = base * base;
+    exponent /= 2;
+  }
+  return res;
+}
 
 VecInt operator*(const VecInt &lhs, const VecInt &rhs) {
-
   if (lhs.digits.size() == 1 && lhs.digits[0] == 0) {
     return VecInt(0);
   } else if (rhs.digits.size() == 1 && rhs.digits[0] == 0) {
